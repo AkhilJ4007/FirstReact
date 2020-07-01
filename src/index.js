@@ -1,17 +1,93 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM, { render } from 'react-dom'
+import Counter from "./Components/Counter"
+import FunctionClick from './Components/FuntionClick'
+var style = {
+  backgroundColor:'black',
+  color:'blue',
+  textAlign:'center'
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// class MyComponent extends React.Component{
+//   render(){
+//     return(
+//       <div style = {style}> Chumma </div>
+//     );
+//   }
+
+// }
+
+let books = [
+{
+  "name" : "sfsaf",
+  "date" : "sdfsd"
+},
+{
+  "name" : "cvxvx",
+  "date" : "erwr"
+}
+]
+
+// const Comp = props => {
+//   return(
+//     <div>
+//    <ul>
+//      {
+//        props.list.map((book,i) => { 
+        
+//        return (<li key = {i}>{book.name}</li>);
+//        }
+//        )
+//      }
+
+//    </ul>
+//    {props.children}
+//    </div>
+//   )
+// }
+
+// const Container = (props) => {
+
+//   return(
+//     <div style = {style}>
+//     <Comp list = {props.books}> 
+//     <p>Whadup kiddoss!!</p>
+//      </Comp>
+//     </div>
+
+//   )
+
+// }
+
+class Container extends React.Component{
+
+  constructor(){
+    super()
+    this.state = {
+      message:"Myruu"
+    }
+  }
+
+  display_myru(){
+      this.setState({
+        message : "Kittii"
+      }
+      );
+  }
+
+  render(){
+    return(
+    <div style ={{textAlign:'center'}}> 
+    <h1 style = {this.props.style}>WELCOMEEEE {this.state.message}</h1>
+    <button style = {{backgroundColor:"red" }} onClick = {()=>this.display_myru()}>
+      Click MEEEE</button>
+      <Counter/>
+    </div>
+    )
+  }
+
+}
+
+ReactDOM.render(<FunctionClick />,document.getElementById("root"))
+  
