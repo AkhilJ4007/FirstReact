@@ -2,6 +2,10 @@ import React from 'react'
 import ReactDOM, { render } from 'react-dom'
 import Counter from "./Components/Counter"
 import FunctionClick from './Components/FuntionClick'
+import ClassClick from './Components/ClassClick'
+import ParentComponent from './Components/ParentComponent'
+import FormComponent from './Components/FormComponent'
+
 var style = {
   backgroundColor:'black',
   color:'blue',
@@ -66,7 +70,9 @@ class Container extends React.Component{
     super()
     this.state = {
       message:"Myruu"
-    }
+       }
+      this.display_myru =  this.display_myru.bind(this)
+   
   }
 
   display_myru(){
@@ -80,7 +86,7 @@ class Container extends React.Component{
     return(
     <div style ={{textAlign:'center'}}> 
     <h1 style = {this.props.style}>WELCOMEEEE {this.state.message}</h1>
-    <button style = {{backgroundColor:"red" }} onClick = {()=>this.display_myru()}>
+    <button style = {{backgroundColor:"red" }} onClick = {this.display_myru}>
       Click MEEEE</button>
       <Counter/>
     </div>
@@ -89,5 +95,5 @@ class Container extends React.Component{
 
 }
 
-ReactDOM.render(<FunctionClick />,document.getElementById("root"))
+ReactDOM.render(<FormComponent />,document.getElementById("root"))
   
