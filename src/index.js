@@ -5,6 +5,7 @@ import FunctionClick from './Components/FuntionClick'
 import ClassClick from './Components/ClassClick'
 import ParentComponent from './Components/ParentComponent'
 import FormComponent from './Components/FormComponent'
+import ParentComp from './Components/ParentComp'
 
 var style = {
   backgroundColor:'black',
@@ -95,5 +96,5 @@ class Container extends React.Component{
 
 }
 
-ReactDOM.render(<FormComponent />,document.getElementById("root"))
+ReactDOM.render(<ParentComp/>,document.getElementById("root"))
   
