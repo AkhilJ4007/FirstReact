@@ -1,11 +1,7 @@
 import React from 'react'
 import ReactDOM, { render } from 'react-dom'
 import Counter from "./Components/Counter"
-import FunctionClick from './Components/FuntionClick'
-import ClassClick from './Components/ClassClick'
-import ParentComponent from './Components/ParentComponent'
-import FormComponent from './Components/FormComponent'
-import ParentComp from './Components/ParentComp'
+import App from "./App"
 
 var style = {
   backgroundColor:'black',
@@ -96,5 +92,5 @@ class Container extends React.Component{
 
 }
 
-ReactDOM.render(<ParentComp/>,document.getElementById("root"))
+ReactDOM.render(<App/>,document.getElementById("root"))
   
