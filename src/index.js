@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM, { render } from 'react-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Counter from "./Components/Counter"
 import App from "./App"
 
