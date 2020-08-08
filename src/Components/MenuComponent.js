@@ -11,14 +11,13 @@ class MenuComponent extends Component {
         this.state = {
             selectedDish: null
         }
-      
         
     }
 
 
     onDishClicked = (dish) =>{
 
-    
+        this.props.onDishClick(dish.id)
         this.setState({
             selectedDish: dish
         })
@@ -33,11 +32,11 @@ class MenuComponent extends Component {
         else{
         return(
             <Card>
-                   <CardImg width = "100%" src = {dish.image} alt="Card image cap"/>
-                   <CardBody>
+                <CardImg width = "100%" src = {dish.image} alt="Card image cap"/>
+                <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
-                   </CardBody>
+                </CardBody>
             </Card>
         )
         }
@@ -49,7 +48,6 @@ class MenuComponent extends Component {
         if(this.state.selectedDish != null && name === this.state.selectedDish.name){
             
             return(
-               
                 <CardBody>
                 <CardTitle>{this.state.selectedDish.name}</CardTitle>
                 <CardText>{this.state.selectedDish.description}</CardText>
@@ -68,11 +66,11 @@ class MenuComponent extends Component {
         const menu = this.props.dishes.map((dish)=>{
             return(
             <div key = {dish.id} className = "col-12 col-md-5 mt-5">
-               <Card onClick = {()=>{this.onDishClicked(dish)}}>
-                   <CardImg width = "100%" src = {dish.image} alt="Card image cap"/>
-                   {
-                       this.getDescription(dish.name)
-                   }
+            <Card onClick = {()=>{this.onDishClicked(dish)}}>
+                <CardImg width = "100%" src = {dish.image} alt="Card image cap"/>
+                {
+                    this.getDescription(dish.name)
+                }
                 
                 </Card>
             </div>
@@ -81,14 +79,10 @@ class MenuComponent extends Component {
         });
 
         return (
-            <div className = "container">
+            <div>
 
                 <div className = "row">
-                       {menu}
-                </div>
-                <div className = "row mt-5">
-                    <CardDetailsComponent  dish = {this.state.selectedDish}/>
-                    <Comments dish = {this.state.selectedDish}></Comments>
+                    {menu}
                 </div>
                 
             </div>
@@ -97,3 +91,6 @@ class MenuComponent extends Component {
 }
 
 export default MenuComponent
+
+
+

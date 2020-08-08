@@ -4,7 +4,7 @@ function Comments(props) {
 
     let comments;
     if(props.dish != null){
-     comments = props.dish.comments.map((comment, id)=>{
+        comments = props.dish.comments.map((comment, id)=>{
         return(
             <li key = {id}>
                 <h4>
