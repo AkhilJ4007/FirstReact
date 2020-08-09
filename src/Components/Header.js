@@ -27,17 +27,17 @@ export class Header extends Component {
                 <NavbarBrand href = "/"> <img src = './assets/images/logo.png' height = "30" width = "40" /> </NavbarBrand>
                 
                 <Collapse isOpen = {this.state.isOpen} navbar>
-                <Nav navbar >
+                <Nav className = "ml-auto nav-items-align" navbar >
 
-                    <NavItem> 
-                        <NavLink className = "nav-link" to = "/home">
-                            <span className = "fa fa-home fa-lg">Home</span>
+                    <NavItem > 
+                        <NavLink className = "nav-link " to = "/home">
+                            <span className = "fa fa-home fa-lg  ">Home</span>
                         </NavLink> 
                     </NavItem>
 
                     <NavItem> 
                         <NavLink className = "nav-link" to = "/about">
-                            <span className = "fa fa-info fa-lg">About</span>
+                            <span style ={{float:"left"}} className = "fa fa-info fa-lg">About</span>
                         </NavLink> 
                     </NavItem>
 
